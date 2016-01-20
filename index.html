@@ -17,7 +17,7 @@ var getURL = function(){ var OpClass = document.getElementById('HonClass').value
 var OpCollegeCode = document.getElementById('CollegeCode').value;
 var OpSubjectCode = document.getElementById('SubjectCode').value;
 var OpYear = document.getElementById('Year').value;
-var URL = 'http://nu.edu.bd/results/honours/result_' + OpClass + 'yearHonours.php?m_college_name=' + OpCollegeCode + '&sub_name=' + OpSubjectCode + '&exam_year=' + OpYear; window.open(URL, '_blank');
+var URL = 'http://nu.edu.bd/results/' + OpClass + 'yearHonours.php?m_college_name=' + OpCollegeCode + '&sub_name=' + OpSubjectCode + '&exam_year=' + OpYear; window.open(URL, '_blank');
 }
 </script>
 <h1> Collegewise Result for Honours Level</h1>
@@ -28,7 +28,8 @@ var URL = 'http://nu.edu.bd/results/honours/result_' + OpClass + 'yearHonours.ph
 <tr>
 <td>Select Class</td>
 <td align="undefined" valign="undefined">
-<select id="HonClass"><option value="4th">Fourth Year</option><option value="3rd">Third Year</option><option value="2nd">Second Year</option><option value="1st">First Year</option></select>
+<select id="HonClass"><option value="
+honours/result_4th">Fourth Year</option><option value="honours/result_3rd">Third Year</option><option value="honours/result_2nd">Second Year</option><option value="result/result_1st">First Year</option></select>
 </td>
 </tr>
 <tr>
