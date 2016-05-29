@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<body style="width: 588px;">
+<style>
+h1 {
+font-family: Arial;
+font-size: 150%;
+}
+body{
+font: 16px Arial, sans-serif;
+}
+</style>
+<title>Mehedi's Words</title>
+
+<h1>Mehedi's Words</h1>
+<hr {="" display="" block="" margin-top="" margin-bottom="0" 0.5em="" margin-left="" margin-right="" auto="" border-style="" inset="" border-width="" 1px="" }="">
+
+<script type="text/javascript">
+function displaydefinition(){
+// load the word
+    var userInput = document.getElementById('theWord').value;
+	
+//load uppercase
+    var UpperWord= userInput.toUpperCase();
+	
+//load pronounciation link
+    var Plnk = document.getElementById('Plnk');
+    Plnk.href = "https://ssl.gstatic.com/dictionary/static/sounds/de/0/" + userInput+ ".mp3";
+    Plnk.innerHTML= userInput;
+	
+//load bangla academy meaning
+    document.getElementById('bImage').src = "http://www.bdword.com/word/" + UpperWord +".JPG";
+	
+// load wikidictionary link
+   document.getElementById('DicWiki').href="http://en.wiktionary.org/w/index.php?title=" + userInput + "&printable=yes";
+	
+// load Marriam-Webster link
+   document.getElementById('DicMerri').href="http://www.merriam-webster.com/dictionary/"+ userInput;
+   
+// load Cambridge defination
+	document.getElementById('DicCamb').href="http://dictionary.cambridge.org/us/dictionary/english/" + userInput;
+
+//	load Cambridge defination
+	document.getElementById('DicVoca').href="https://www.vocabulary.com/dictionary/" + userInput;
+	
+//	load Oxford Thesaurus defination
+	document.getElementById('DicOxfordT').href="http://www.oxforddictionaries.com/definition/english-thesaurus/" + userInput;
+
+//	load Longman defination
+	document.getElementById('DicLong').href="http://www.ldoceonline.com/dictionary/" + userInput;
+
+//	load thesaurus defination
+	document.getElementById('DicTheT').href="http://www.thesaurus.com/browse/" + userInput + "?s=t";
+
+}
+
+
+</script>
+
+<label>Enter your Word here: </label> <input type= text id="theWord" > <button  onclick="displaydefinition()">Show defination</button> <br>
+
+
+<hr {="" display="" block="" margin-top="" margin-bottom="0" 0.5em="" margin-left="" margin-right="" auto="" border-style="" inset="" border-width="" 1px="" }="">
+
+<div style="text-align: left; padding-top: 0px;">
+<p>Pronounciation : <a href="" id=Plnk>Input a Word</a></p> 
+</div>
+
+<hr {="" display="" block="" margin-top="" margin-bottom="0" 0.5em="" margin-left="" margin-right="" auto="" border-style="" inset="" border-width="" 1px="" }="">
+
+<label> <b>Bangla Academy Meaning :</b> </label> <br>
+<img id="bImage" src="C" alt="Loading..."> <br>
+
+<div style="text-align: left; padding-top: 10px;">
+<label> <b>Definitation from other dictionaries:</b> </label>
+<hr {="" display="" block="" margin-top="" margin-bottom="0" 0.5em="" margin-left="" margin-right="" auto="" border-style="" inset="" border-width="" 1px="" }="">
+<label> Vocabulary.com: </label> <a href="" id=DicVoca>Click Here</a></p>
+<label>WikiDictionary : </label> <a href="" id=DicWiki>Click Here</a></p>
+<label> Merriam-Webster: </label> <a href="" id=DicMerri>Click Here</a></p> 
+<label> Cambridge: </label> <a href="" id=DicCamb>Click Here</a></p> 
+<label> Longman Dictionary of contemporary English: </label> <a href="" id=DicLong>Click Here</a></p>  <br>
+
+<label> Oxford Dictionary Thesaurus: </label> <a href="" id=DicOxfordT>Click Here</a></p>
+<label> Thesaurus (Synonyms Antonyms Online): </label> <a href="" id=DicTheT>Click Here</a></p>
+</div>
+
+</body>
+</html> 
