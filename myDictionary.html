@@ -9,17 +9,20 @@ font-size: 150%;
 body{
 font: 16px Arial, sans-serif;
 }
-</style>
+</style>
+
 <title>Mehedi's Words</title>
 
 <h1>Mehedi's Words</h1>
-<hr {="" display="" block="" margin-top="" margin-bottom="0" 0.5em="" margin-left="" margin-right="" auto="" border-style="" inset="" border-width="" 1px="" }="">
+<hr {="" display="" block="" margin-top="" margin-bottom="0" 0.5em="" margin-left="" margin-right="" auto="" border-style="" inset="" border-width="" 1px="" }="">
+
+
 
 <script type="text/javascript">
 function displaydefinition(){
 // load the word
-    var userInput = document.getElementById('theWord').value;
-	
+    var uInput = document.getElementById('theWord').value;
+    var userInput = uInput.toLowerCase();	
 //load uppercase
     var UpperWord= userInput.toUpperCase();
 	
@@ -39,28 +42,24 @@ function displaydefinition(){
    
 // load Cambridge defination
 	document.getElementById('DicCamb').href="http://dictionary.cambridge.org/us/dictionary/english/" + userInput;
-
 //	load Cambridge defination
 	document.getElementById('DicVoca').href="https://www.vocabulary.com/dictionary/" + userInput;
 	
 //	load Oxford Thesaurus defination
 	document.getElementById('DicOxfordT').href="http://www.oxforddictionaries.com/definition/english-thesaurus/" + userInput;
-
 //	load Longman defination
-	document.getElementById('DicLong').href="http://www.ldoceonline.com/dictionary/" + userInput;
-
+	document.getElementById('DicLong').href="http://www.ldoceonline.com/search/?q=" + userInput;
 //	load thesaurus defination
 	document.getElementById('DicTheT').href="http://www.thesaurus.com/browse/" + userInput + "?s=t";
-
 }
-
-
 </script>
 
 <label>Enter your Word here: </label> <input type= text id="theWord" > <button  onclick="displaydefinition()">Show defination</button> <br>
 
 
-<hr {="" display="" block="" margin-top="" margin-bottom="0" 0.5em="" margin-left="" margin-right="" auto="" border-style="" inset="" border-width="" 1px="" }="">
+<hr {="" display="" block="" margin-top="" margin-bottom="0" 0.5em="" margin-left="" margin-right="" auto="" border-style="" inset="" border-width="" 1px="" }="">
+
+
 
 <div style="text-align: left; padding-top: 0px;">
 <p>Pronounciation : <a href="" id=Plnk>Input a Word</a></p> 
@@ -69,19 +68,19 @@ function displaydefinition(){
 <hr {="" display="" block="" margin-top="" margin-bottom="0" 0.5em="" margin-left="" margin-right="" auto="" border-style="" inset="" border-width="" 1px="" }="">
 
 <label> <b>Bangla Academy Meaning :</b> </label> <br>
-<img id="bImage" src="C" alt="Loading..."> <br>
+<img id="bImage" src="C" alt="Not Found"> <br>
 
 <div style="text-align: left; padding-top: 10px;">
 <label> <b>Definitation from other dictionaries:</b> </label>
 <hr {="" display="" block="" margin-top="" margin-bottom="0" 0.5em="" margin-left="" margin-right="" auto="" border-style="" inset="" border-width="" 1px="" }="">
-<label> Vocabulary.com: </label> <a href="" id=DicVoca>Click Here</a></p>
-<label>WikiDictionary : </label> <a href="" id=DicWiki>Click Here</a></p>
-<label> Merriam-Webster: </label> <a href="" id=DicMerri>Click Here</a></p> 
-<label> Cambridge: </label> <a href="" id=DicCamb>Click Here</a></p> 
-<label> Longman Dictionary of contemporary English: </label> <a href="" id=DicLong>Click Here</a></p>  <br>
+<label> Vocabulary.com: </label> <a href="" target="_blank" id=DicVoca>Click Here</a></p>
+<label>WikiDictionary : </label> <a href="" target="_blank" id=DicWiki>Click Here</a></p>
+<label> Merriam-Webster: </label> <a href="" target="_blank" id=DicMerri>Click Here</a></p> 
+<label> Cambridge: </label> <a href="" target="_blank" id=DicCamb>Click Here</a></p> 
+<label> Longman Dictionary of contemporary English: </label> <a href="" target="_blank" id=DicLong>Click Here</a></p>  <br>
 
-<label> Oxford Dictionary Thesaurus: </label> <a href="" id=DicOxfordT>Click Here</a></p>
-<label> Thesaurus (Synonyms Antonyms Online): </label> <a href="" id=DicTheT>Click Here</a></p>
+<label> Oxford Dictionary Thesaurus: </label> <a href="" target="_blank" id=DicOxfordT>Click Here</a></p>
+<label> Thesaurus (Synonyms Antonyms Online): </label> <a href="" target="_blank" id=DicTheT>Click Here</a></p>
 </div>
 
 </body>
