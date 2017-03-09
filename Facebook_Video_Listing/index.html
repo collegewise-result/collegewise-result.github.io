@@ -26,7 +26,7 @@
 		{
 			var divContainer = document.createElement("div");
 			var vidURL="www.facebook.com/" + document.getElementById("dPageID").value + "/videos/" + data[friendIndex].id 
-			divContainer.innerHTML="<a href=vidURL>" + data[friendIndex].id + "</a>";
+			divContainer.innerHTML="<a href=" +vidURL+ ">" + data[friendIndex].id + "</a>";
 			divTarget.appendChild(divContainer);
 		}
 	}
@@ -35,7 +35,6 @@
 	{
 		var pageID=document.getElementById("dPageID").value;
 		var GetFrom="/" + pageID + "/videos";
-		alert("searching facebook.com"+pageID)
 		FB.api(GetFrom, onFriendsListLoaded);  
 	} ///'dbbads/videos'
 	
