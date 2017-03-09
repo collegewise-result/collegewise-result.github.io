@@ -6,6 +6,7 @@
 <body>
 
   <div id="fb-root"></div>
+	
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
@@ -50,11 +51,12 @@
 function getUser()
 {
     FB.api('/me', function(response) {
-       console.log('Response is '+response);
+       //console.log('Response is '+response);
        alert('Your name is ' + response.first_name);
        alert('Your last name is ' + response.last_name);
        alert('Your Gender is ' + response.gender);
-       alert('Your status is '+response.username);
+       alert('Your status is '+ response.username);
+	    alert ('nothing checking if it works')
     }
 	   });
 </script>
