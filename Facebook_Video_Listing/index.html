@@ -55,8 +55,8 @@
 function ShowMyName() {
         FB.api("/dbbads/videos",
                 function (response) {
-                    alert('Name is ' + response.data.description[1]);
-		showVideos(response)
+                    alert('Name is ' + response.data[1].description[1]);
+		//showVideos(response)
                 });
         
     }
