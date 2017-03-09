@@ -11,20 +11,9 @@
 	<input type="text" id="dPageID" />
 	<input type="button" onclick="showPageID()" value="Show"/>
 	</div>
-	<div id=PageName></p></div>
+
 	<script>
-		function showPageID()
-	{
-                document.getElementById("PageName").innerHTML="";
-		var divTarget2=document.getElementById("PageName");
-		var H2Container = document.createElement("H2")
-		var pageID=document.getElementById("dPageID").value;
-		var GetFrom="/" + pageID + "/videos";
-		H2Container.innerHTML= "Please wait...retriving video list form " + GetFrom ;
-		divTarget2.appendChild(H2Container);
-		showFriendsList()
-	}
-	</script>
+		
 	
 <script>
 	function onFriendsListLoaded(response)
@@ -42,7 +31,8 @@
 	function showFriendsList()
 	{
 		var pageID=document.getElementById("dPageID").value;
-		var GetFrom="'/" + pageID + "/videos'";
+		var GetFrom="/" + pageID + "/videos";
+		alert("searching facebook.com"+pageID)
 		FB.api(GetFrom, onFriendsListLoaded);  
 	} ///'dbbads/videos'
 	
