@@ -38,9 +38,11 @@
 		}
 	}
 		
-	function showFriendsList(thePage)
+	function showFriendsList()
 	{
-		FB.api("'/" +document.getElementById("dPageID") + "/videos'", onFriendsListLoaded);  
+		var pageID=document.getElementById("dPageID").value;
+		var GetFrom="/" + pageID + "/videos";
+		FB.api(GetFrom, onFriendsListLoaded);  
 	} ///'dbbads/videos'
 	
 	
