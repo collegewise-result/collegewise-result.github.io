@@ -1,99 +1,117 @@
 <!DOCTYPE html>
-<html>
+<html 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:fb="http://www.facebook.com/2008/fbml">
 <head>
-<title>FACEBOOK API TEST</title>
+<title>Facebook Grape API TEST</title>
 </head>
 <body>
-
-  <div id="fb-root"></div>
-	
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=622613677930417";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-  
+<div id="fb-root"></div>
 <script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '622613677930417',
-      xfbml      : true,
-      version    : 'v2.8'
-    });
-    FB.AppEvents.logPageView();
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
-
-<div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="true" data-auto-logout-link="true"></div>
-  
-                    
-<hr>
-	
-	<section>
-	
-	</section>
-	
-
-    
-    
-  <button name="my_full_name" onclick="getUser()" value="My Name" />
-<script language="javascript" type="text/javascript">
-
-function getUser()
-{
-    FB.api('/dbbads/videos', function(response) {
-       //console.log('Response is '+response);
-       //alert('Your status is '+ response.username);
-	    alert('nothing checking if it works');
-	    alert('video id' + response.data[1].id)
-    }
-	   });
-</script>
-   
-  
- 	<script>
-
-	var section = document.querySelector('section');
-	
-
-
-	
-	function showVideos(jsonObj) {
-	var Videos = jsonObj['data'];
-	
-	for(i = 0; i < Videos.length; i++) {
-	var myArticle = document.createElement('article');
-	var myH2 = document.createElement('h2');
-	var myPara1 = document.createElement('p');
-	var myPara2 = document.createElement('p');
-	
-	
-	
-	myH2.textContent = Videos[i].id;
-	myPara1.textContent = 'Description: ' + Videos[i].description;
-	myPara2.textContent = 'Uploaded: ' + Videos[i].updated_time;
-
-	
-	
-	myArticle.appendChild(myH2);
-	myArticle.appendChild(myPara1);
-	myArticle.appendChild(myPara2);
-	
-	
-	section.appendChild(myArticle);
+	function onFriendsListLoaded(response)
+	{
+		//alert("onFriendsListLoaded");	
+		var divTarget=document.getElementById("friends-list-container");
+		var data=response.data;
+		//alert("divTarget="+divTarget+"\ndata="+data);
+		for (var friendIndex=0; friendIndex<data.length; friendIndex++)     
+		{
+			var divContainer = document.createElement("div");
+			divContainer.innerHTML="<hr><img src='http://graph.facebook.com/"+data[friendIndex].id+"/picture'></img><br>"+data[friendIndex].name;
+			divTarget.appendChild(divContainer);
+		}
 	}
+	function showFriendsList()
+	{
+		FB.api('/me/friends', onFriendsListLoaded);  
 	}
+
 	
-	</script>
+	window.fbAsyncInit = function() 
+	{
+		FB.Event.subscribe('auth.statusChange', onFacebookStatusChange);
+		FB.init({
+			appId  : '622613677930417',
+			status : true, // check login status
+			cookie : true, // enable cookies to allow the server to access the session
+			xfbml  : true  // parse XFBML
+		});
+
+		FB.getLoginStatus(onFacebookInitialLoginStatus);   
+	};
+
+	(function() {
+		var e = document.createElement('script');
+		e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+		e.async = true;
+		document.getElementById('fb-root').appendChild(e);
+	}());
+
+	function facebookLogin()
+	{
+		FB.login(onFacebookLoginStatus, {scope:'read_stream,publish_stream'});
+	}
+
+	/*
+	* Callback function for 'auth.statusChange' event.
+	*/
+	function onFacebookInitialLoginStatus(response)
+	{
+		/*alert("onFacebookLoginStatus(), "
+			+ "\nresponse.status="+response.status
+			+" \nresponse.authResponse="+response.authResponse
+			+" \nresponse.perms="+response.perms);*/
+		if (response.status=="connected" && response.authResponse)
+		{
+			//alert("You are all set.");
+			var loginButtonDiv=document.getElementById("fb-login-button-div");
+			loginButtonDiv.style.display="none";
+			showFriendsList();
+		}
+		else
+		{
+			facebookLogin();
+		}
+	}  
+
+	/*
+	* Callback function for 'auth.statusChange' event.
+	*/
+	function onFacebookStatusChange(response)
+	{
+		/*alert("onFacebookStatusChange(), "
+			+ "\nresponse.status="+response.status
+			+" \nresponse.authResponse="+response.authResponse
+			+" \nresponse.perms="+response.perms);*/
+		//onFacebookLoginStatus(response);  
+	}
+
+	/*
+	* Callback function for 'auth.statusChange' event.
+	*/
+	function onFacebookLoginStatus(response)
+	{
+	
+		/*alert("onFacebookLoginStatus(), "
+			+ "\nresponse.status="+response.status
+			+" \nresponse.authResponse="+response.authResponse
+			+" \nresponse.perms="+response.perms);*/
+			
+		if (response.status=="connected" && response.authResponse)
+		{
+			var loginButtonDiv=document.getElementById("fb-login-button-div");
+			loginButtonDiv.style.display="none";
+			showFriendsList();
+		}
+		else
+		{
+			alert("Please login to enjoy this application.");
+		}
+	} 
+	
+	
+</script>
+<p>This is an example of loading and showing a list of your Facebook friends.  The formatting is very plain here but this is intentional so that you can format it any way you want.
+
 </body>
 </html>
