@@ -11,16 +11,16 @@
 	<input type="text" id="dPageID" />
 	<input type="button" onclick="showPageID()" value="Show"/>
 	</div>
-	<div id=PageName>abc</div>
+	<div id=PageName><p>abc</p></div>
 	<script>
 		function showPageID()
 	{
 		var divTarget2=document.getElementById("PageName");
 		var H2Container = document.createElement("H2")
 		var pageID=getElementById("dPageID");
-		var GetFrom="/" + pageID + "/videos";
+		var GetFrom="/" + document.getElementById("dpageID").value + "/videos";
 		H2Container.innerHTML= "Please wait...retriving video list form " + GetFrom ;
-		divTarget2.appendChild(h2Container);
+		divTarget2.appendChild(H2Container);
 	}
 	</script>
 	
@@ -84,7 +84,7 @@
 			var loginButtonDiv=document.getElementById("fb-login-button-div");
 			loginButtonDiv.style.display="none";
 			document.getElementById("dPageID").focus();
-			showFriendsList();
+			//showFriendsList();
 		}
 		else
 		{
