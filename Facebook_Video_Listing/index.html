@@ -45,17 +45,18 @@
 
     
     
-  <button name="my_full_name" onclick="ShowMyName()" value="My Name" />
+  <button name="my_full_name" onclick="getUser()" value="My Name" />
 <script language="javascript" type="text/javascript">
-function ShowMyName() {
-        FB.api("/dbbads/videos",
-                function (response) {
-			alert ('working...' + response.data[1].id);
-                   // alert('Name is ' + response.data[1].description[1]);
-		//showVideos(response)
-                });
-        
+function getUser()
+{
+    FB.api('/me', function(response) {
+       console.log('Response is '+response);
+       alert('Your name is ' + response.first_name);
+       alert('Your last name is ' + response.last_name);
+       alert('Your Gender is ' + response.gender);
+       alert('Your status is '+response.username);
     }
+	   });
 </script>
    
   
