@@ -25,7 +25,7 @@
 		for (var friendIndex=0; friendIndex<data.length; friendIndex++)
 		{
 			var divContainer = document.createElement("div");
-			var vidURL="www.facebook.com/" + document.getElementById("dPageID").value + "/videos/" + data[friendIndex].id 
+			var vidURL="http://www.facebook.com/" + document.getElementById("dPageID").value + "/videos/" + data[friendIndex].id 
 			divContainer.innerHTML="<a href=" +vidURL+ ">" + data[friendIndex].id + "</a>";
 			divTarget.appendChild(divContainer);
 		}
