@@ -18,12 +18,15 @@
 <script>
 	function onFriendsListLoaded(response)
 	{
+		//clear div
+		document.getElementById("friends-list-container").innerHTML="";
 		var divTarget=document.getElementById("friends-list-container");
 		var data=response.data;
 		for (var friendIndex=0; friendIndex<data.length; friendIndex++)
 		{
 			var divContainer = document.createElement("div");
-			divContainer.innerHTML="<b>" + data[friendIndex].id + "</b>";
+			var vidURL="www.facebook.com/" + document.getElementById("dPageID").value + "/videos/" + data[friendIndex].id 
+			divContainer.innerHTML="<a href=vidURL>" + data[friendIndex].id + "</a>";
 			divTarget.appendChild(divContainer);
 		}
 	}
