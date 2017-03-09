@@ -48,6 +48,7 @@
     
   <button name="my_full_name" onclick="getUser()" value="My Name" />
 <script language="javascript" type="text/javascript">
+
 function getUser()
 {
     FB.api('/me', function(response) {
@@ -56,7 +57,7 @@ function getUser()
        alert('Your last name is ' + response.last_name);
        alert('Your Gender is ' + response.gender);
        alert('Your status is '+ response.username);
-	    alert ('nothing checking if it works')
+	    alert('nothing checking if it works');
     }
 	   });
 </script>
