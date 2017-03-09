@@ -7,6 +7,9 @@
 </head>
 <body>
 <div id="fb-root"></div>
+	<input type="text" id="dPageID" />
+	<input type="button" onclick="showFriendsList()" value="Show"/>
+	
 <script>
 	function onFriendsListLoaded(response)
 	{
@@ -22,8 +25,10 @@
 		
 	function showFriendsList()
 	{
-		FB.api('/dbbads/videos', onFriendsListLoaded);  
-	}
+		var pageID=getelementbyid("dPageID");
+		var GetFrom="/"+pageID+"/videos"
+		FB.api(GetFrom, onFriendsListLoaded);  
+	} ///'dbbads/videos'
 
 
 	
