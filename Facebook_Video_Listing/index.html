@@ -41,7 +41,7 @@
   data-width="450"
   data-show-faces="true">
 </div>                         
-
+<hr>
 	
 	<section>
 	
@@ -50,16 +50,16 @@
 
     
     
-   <button name="my_full_name" onclick="ShowMyName()" value="My Name" />
+  <button name="my_full_name" onclick="ShowMyName()" value="My Name" />
 <script language="javascript" type="text/javascript">
 function ShowMyName() {
-        FB.api("/{page-id}/videos",
+        FB.api("/me",
                 function (response) {
-                    showVideos(response);
+                    alert('Name is ' + response.name);
                 });
         
     }
-</script> 
+</script>
    
   
  	<script>
