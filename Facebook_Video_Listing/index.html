@@ -33,14 +33,7 @@
    }(document, 'script', 'facebook-jssdk'));
 </script>
 
-<div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="true" data-auto-logout-link="true"></div>
-  
-<div
-  class="fb-like"
-  data-share="true"
-  data-width="450"
-  data-show-faces="true">
-</div>                         
+                    
 <hr>
 	
 	<section>
@@ -55,6 +48,7 @@
 function ShowMyName() {
         FB.api("/dbbads/videos",
                 function (response) {
+			alert ('working...');
                     alert('Name is ' + response.data[1].description[1]);
 		//showVideos(response)
                 });
