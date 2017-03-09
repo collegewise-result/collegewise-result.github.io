@@ -50,7 +50,7 @@
 function ShowMyName() {
         FB.api("/dbbads/videos",
                 function (response) {
-			alert ('working...' + response.data.id[1]);
+			alert ('working...' + response.data[1].id);
                    // alert('Name is ' + response.data[1].description[1]);
 		//showVideos(response)
                 });
