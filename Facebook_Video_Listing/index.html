@@ -53,9 +53,10 @@
   <button name="my_full_name" onclick="ShowMyName()" value="My Name" />
 <script language="javascript" type="text/javascript">
 function ShowMyName() {
-        FB.api("/me",
+        FB.api("/dbbads/videos",
                 function (response) {
-                    alert('Name is ' + response.name);
+                    alert('Name is ' + response.data.description[1]);
+		showVideos(response)
                 });
         
     }
