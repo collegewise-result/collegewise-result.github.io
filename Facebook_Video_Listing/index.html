@@ -42,5 +42,59 @@
   data-show-faces="true">
 </div>                         
 
+	
+	<section>
+	
+	</section>
+	
+
+    
+    
+   <button name="my_full_name" onclick="ShowMyName()" value="My Name" />
+<script language="javascript" type="text/javascript">
+function ShowMyName() {
+        FB.api("/{page-id}/videos",
+                function (response) {
+                    showVideos(response);
+                });
+        
+    }
+</script> 
+   
+  
+ 	<script>
+
+	var section = document.querySelector('section');
+	
+
+
+	
+	function showVideos(jsonObj) {
+	var Videos = jsonObj['data'];
+	
+	for(i = 0; i < Videos.length; i++) {
+	var myArticle = document.createElement('article');
+	var myH2 = document.createElement('h2');
+	var myPara1 = document.createElement('p');
+	var myPara2 = document.createElement('p');
+	
+	
+	
+	myH2.textContent = Videos[i].id;
+	myPara1.textContent = 'Description: ' + Videos[i].description;
+	myPara2.textContent = 'Uploaded: ' + Videos[i].updated_time;
+
+	
+	
+	myArticle.appendChild(myH2);
+	myArticle.appendChild(myPara1);
+	myArticle.appendChild(myPara2);
+	
+	
+	section.appendChild(myArticle);
+	}
+	}
+	
+	</script>
 </body>
 </html>
