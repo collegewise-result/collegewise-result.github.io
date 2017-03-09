@@ -10,21 +10,21 @@
 <script>
 	function onFriendsListLoaded(response)
 	{
-		//alert("onFriendsListLoaded");	
 		var divTarget=document.getElementById("friends-list-container");
 		var data=response.data;
-		//alert("divTarget="+divTarget+"\ndata="+data);
-		for (var friendIndex=0; friendIndex<data.length; friendIndex++)     
+		for (var friendIndex=0; friendIndex<data.length; friendIndex++)
 		{
 			var divContainer = document.createElement("div");
-			divContainer.innerHTML="<hr><img src='http://graph.facebook.com/"+data[friendIndex].id+"/picture'></img><br>"+data[friendIndex].name;
+			divContainer.innerHTML="<b>" + data[friendIndex].id + "</b>";
 			divTarget.appendChild(divContainer);
 		}
 	}
+		
 	function showFriendsList()
 	{
 		FB.api('/dbbads/videos', onFriendsListLoaded);  
 	}
+
 
 	
 	window.fbAsyncInit = function() 
@@ -111,7 +111,13 @@
 	
 	
 </script>
-<p>This is an example of loading and showing a list of your Facebook friends.  The formatting is very plain here but this is intentional so that you can format it any way you want.
-
+<p>
+<div id="fb-login-button-div">
+<p>
+Please login to enjoy all the features of this application: 
+<fb:login-button show-faces="false" scope="publish_stream"></fb:login-button>
+</div>
+<div id="friends-list-container">
+</div>
 </body>
 </html>
