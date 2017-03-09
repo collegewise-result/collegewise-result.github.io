@@ -17,10 +17,11 @@
 	{
 		var divTarget2=document.getElementById("PageName");
 		var H2Container = document.createElement("H2")
-		var pageID=getElementById("dPageID");
-		var GetFrom="/" + document.getElementById("dpageID").value + "/videos";
+		var pageID=document.getElementById("dPageID").value;
+		var GetFrom="/" + pageID + "/videos";
 		H2Container.innerHTML= "Please wait...retriving video list form " + GetFrom ;
 		divTarget2.appendChild(H2Container);
+		showFriendsList()
 	}
 	</script>
 	
@@ -37,11 +38,10 @@
 		}
 	}
 		
-	function showFriendsList()
+	function showFriendsList(thePage)
 	{
-		FB.api("'/" +document.getElementById("dPageID)+ "/videos'", onFriendsListLoaded);  
+		FB.api("'/" +document.getElementById("dPageID") + "/videos'", onFriendsListLoaded);  
 	} ///'dbbads/videos'
-
 	
 	
 	window.fbAsyncInit = function() 
@@ -53,22 +53,18 @@
 			cookie : true, // enable cookies to allow the server to access the session
 			xfbml  : true  // parse XFBML
 		});
-
 		FB.getLoginStatus(onFacebookInitialLoginStatus);   
 	};
-
 	(function() {
 		var e = document.createElement('script');
 		e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
 		e.async = true;
 		document.getElementById('fb-root').appendChild(e);
 	}());
-
 	function facebookLogin()
 	{
 		FB.login(onFacebookLoginStatus, {scope:'read_stream,publish_stream'});
 	}
-
 	/*
 	* Callback function for 'auth.statusChange' event.
 	*/
@@ -91,7 +87,6 @@
 			facebookLogin();
 		}
 	}  
-
 	/*
 	* Callback function for 'auth.statusChange' event.
 	*/
@@ -103,7 +98,6 @@
 			+" \nresponse.perms="+response.perms);*/
 		onFacebookLoginStatus(response);  
 	}
-
 	/*
 	* Callback function for 'auth.statusChange' event.
 	*/
