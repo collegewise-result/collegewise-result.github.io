@@ -35,7 +35,7 @@
 	{
 		var pageID=document.getElementById("dPageID").value;
 		var GetFrom="/" + pageID + "/videos";
-		FB.api(GetFrom, onFriendsListLoaded);  
+		FB.api(GetFrom,{'limit': '500'} onFriendsListLoaded);  
 	} ///'dbbads/videos'
 	
 	
