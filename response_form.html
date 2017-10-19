@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="main.css">
+
+<style>
+.form-label {
+align:left;
+float:left;
+//background-color: #38a6ff;
+//border: 1px red;
+border-radius:5px 5px 5px 5px;
+-moz-border-radius:5px 5px 5px 5px;
+-webkit-border-radius:5px 5px 5px 5px;
+color: #0099ff;
+display:block;
+font-size: 1.3em;
+//margin: 0px 2% 2% 3.5%; //top,right,bottom,left
+overflow:hidden;
+padding: 3% 1% 2px 1%;
+text-align: left;
+white-space:nowrap;
+width:90%;
+}
+
+input {
+display: block;
+margin: auto;
+padding-left:5px;
+width: 97%;
+font-family: sans-serif;
+font-size: 1.4em;
+appearance: none;
+box-shadow: none;
+border-radius: 5px;
+border: solid 2px #0099ff;
+transition: box-shadow 0.3s, border 0.3s;
+}
+input:focus {
+  outline: none;
+border: solid 3px #3366ff;
+  box-shadow: 0 0 5px 1px #99ccff;
+}
+
+textarea {
+padding-left:5px;
+display: block;
+margin: auto;
+width: 97%;
+font-family: sans-serif;
+font-size: 1.4em;
+appearance: none;
+box-shadow: none;
+border-radius: 5px;
+border: solid 2px #0099ff;
+transition: box-shadow 0.3s, border 0.3s;
+}
+textarea:focus {
+  outline: none;
+border: solid 3px #3366ff;
+  box-shadow: 0 0 5px 1px #99ccff;
+}
+
+button {
+text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+align:center;
+background-color: #38a6ff;
+border: none;
+border-radius:5px 5px 5px 5px;
+-moz-border-radius:5px 5px 5px 5px;
+-webkit-border-radius:5px 5px 5px 5px;
+color: azure;
+display:block;
+font-size: 1.6em;
+margin: auto; //top,right,bottom,left
+overflow:hidden;
+padding: 1%;
+text-align: center;
+white-space:nowrap;
+width:40%;
+margin-top:10px;
+}
+button:hover {
+  filter: alpha(opacity=90);
+  background-image: -webkit-linear-gradient(transparent,rgba(0,0,0,.05) 40%,rgba(0,0,0,.1));
+  background-image: linear-gradient(transparent,rgba(0,0,0,.05) 40%,rgba(0,0,0,.1));
+}
+</style>
+
+<form action="https://formspree.io/i.never.read.mails@gmail.com" method="POST">
+
+<input type="hidden" name="_next" value="thanks_you.html" ID=Hidden1/> 
+<input type="hidden" name="_subject" value="Collegewise Result : New Submission" ID=Hidden2/>
+
+
+</head>
+<body>
+  <h1> Collegewise Result for National University of Bangladesh </h1> 
+<div class="content">
+<p class="instruction" style="border: 0px;margin-top:10px; margin-bottom:10px;font-size:2.5em;color:#0099ff;">Feedback Form</p>
+
+      <label for="name" class="form-label">Name: </label>
+      <input type="text" id="name" name="name" placeholder="Please write your name" />
+
+     <label class="form-label" for="email">Your Email Address:</label>
+      <input id="email" name="email" type="email" value=""
+      required placeholder="your.name@email.com"/>
+           
+      <label class="form-label" for="message">Message:</label>
+      <textarea id="message" name="message" rows="8"
+      required placeholder="Your message..."></textarea>
+
+
+<button type="submit" name="submit" ID=Button1>Send</button>
+
+</div>
+</form>
+</body>
+</html>
