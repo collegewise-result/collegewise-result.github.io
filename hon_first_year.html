@@ -8,9 +8,9 @@
 <script type="text/javascript">
 function updateTextField()
 {
-    var select = document.getElementById("m_college_name_option");
-    var option = select.options[select.selectedIndex];
-   document.getElementById("m_college_name").value = option.value;
+    	var select = document.getElementById("m_college_name_option");
+    	var option = select.options[select.selectedIndex];
+   	document.getElementById("m_college_name").value = option.value;
    
 }
 
@@ -23,7 +23,7 @@ function ShowResult()
 	var BaseUrl="https://www.nu.ac.bd/results/honours/result_1styearHonours.php?" ;
 	var dynamicURL="m_college_name=" + collegeCode + "&sub_name=" + subjectCode + "&exam_year=" + examYear;
 	var FullURL=BaseUrl+dynamicURL;
-   	window.open("https://www.youraddress.com","_self");
+   	window.open(FullURL,"_self");
 }
 </script>
 
