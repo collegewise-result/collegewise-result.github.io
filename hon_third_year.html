@@ -1,28 +1,21 @@
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <link rel="stylesheet" type="text/css" href="main.css">
 
 <script type="text/javascript">
-function updateTextField()
-{
-    var select = document.getElementById("m_college_name_option");
-    var option = select.options[select.selectedIndex];
-   document.getElementById("m_college_name").value = option.value;
-   
-}
-
+var _0x3d93=['188134JDocEN','&exam_year=','84761sqQHxP','39Rpvkoz','https://www.nu.ac.bd/results/honours/result_3rdyearHonours.php?','61514dlzfXR','652743bQtwAp','79dVwFUs','exam_year','1XAgTAQ','getElementById','sub_name','7mkjbxE','1GwkaMD','open','9421bKrzWS','2RCvvth','&sub_name=','options','_self','value','8851ofMbmT','255574uZmQZd'];function _0x5c91(_0x3ce11e,_0x14af8e){return _0x5c91=function(_0x3d936a,_0x5c917a){_0x3d936a=_0x3d936a-0x120;var _0x5f4428=_0x3d93[_0x3d936a];return _0x5f4428;},_0x5c91(_0x3ce11e,_0x14af8e);}(function(_0x370314,_0x729494){var _0x2958a4=_0x5c91;while(!![]){try{var _0x5cc8b5=-parseInt(_0x2958a4(0x120))*-parseInt(_0x2958a4(0x12d))+-parseInt(_0x2958a4(0x130))*-parseInt(_0x2958a4(0x121))+-parseInt(_0x2958a4(0x129))*parseInt(_0x2958a4(0x132))+parseInt(_0x2958a4(0x12e))*parseInt(_0x2958a4(0x123))+parseInt(_0x2958a4(0x12a))*parseInt(_0x2958a4(0x124))+parseInt(_0x2958a4(0x12b))*parseInt(_0x2958a4(0x134))+-parseInt(_0x2958a4(0x131));if(_0x5cc8b5===_0x729494)break;else _0x370314['push'](_0x370314['shift']());}catch(_0x3c535c){_0x370314['push'](_0x370314['shift']());}}}(_0x3d93,0x5a3a2));function updateTextField(){var _0x28677a=_0x5c91,_0x1ba4fd=document[_0x28677a(0x135)]('m_college_name_option'),_0x5cd6f7=_0x1ba4fd[_0x28677a(0x126)][_0x1ba4fd['selectedIndex']];document[_0x28677a(0x135)]('m_college_name')[_0x28677a(0x128)]=_0x5cd6f7[_0x28677a(0x128)];}function ShowResult(){var _0x4f3202=_0x5c91,_0x3fc28e=document[_0x4f3202(0x135)]('m_college_name')[_0x4f3202(0x128)],_0x1b74f4=document[_0x4f3202(0x135)](_0x4f3202(0x136))[_0x4f3202(0x128)],_0x216ec0=document[_0x4f3202(0x135)](_0x4f3202(0x133))[_0x4f3202(0x128)],_0x3f6d8b=_0x4f3202(0x12f),_0x5b869b='m_college_name='+_0x3fc28e+_0x4f3202(0x125)+_0x1b74f4+_0x4f3202(0x12c)+_0x216ec0,_0x3bf808=_0x3f6d8b+_0x5b869b;window[_0x4f3202(0x122)](_0x3bf808,_0x4f3202(0x127));}
 </script>
 
-
-<form name="" action="http://www.nu.ac.bd/results/honours/result_3rdyearHonours.php" method="post" target="_blank" ID=Form1>
 
 </head>
 <body>
   <h1> Collegewise Result for National University of Bangladesh </h1> 
 <div class="content">
-<p class="instruction" style="margin-top:10px; margin-bottom:10px;font-size:2em;color:blue;">Honours Third Year</p>
+<p class="instruction" style="margin-top:10px; margin-bottom:15px;font-size:2em;color:blue;">Honours Third Year</p>
 
 <div style="font-size:1.2em;padding:2px" class="box-header" >Select Subject</div>
   <div class="box-body">
@@ -41,7 +34,7 @@ function updateTextField()
             <p></p>
             
             <p style="background-color:LightSteelBlue;margin-top:-10px;font-size:1.2em;text-align:center;color:Blue;">Type College Code:</p> 
-           <input style="margin-top:-18px;" type="number" name="m_college_name" type="number" id="m_college_name" value="2101" size="15" maxlength="10">
+            <input style="margin-top:-18px;" type="number" name="m_college_name" type="number" id="m_college_name" value="2101" size="15" maxlength="10">
   </div>
 
 <p></p>
@@ -53,11 +46,13 @@ function updateTextField()
 
 <p></p>
 
-<input class="submit-button" type="submit" name="submit" value="Show Collegewise Result">
-
-<p style="text-align:right;">by Md. Mehedi Hasan <a href="response_form.html">[Send Feedback]</a> </p>
+<input class="submit-button" type="button" name="submit" value="Show Collegewise Result" onclick="ShowResult()">
 
 </div>
+<p style="text-align: center;margin: auto;max-width: 500px;padding: 10px;background: #cad9e7;color: white;"><a href="response_form.html">Send me your queries, suggestions or regards</a></p>
+
+<p style="text-align: center;margin: auto;max-width: 500px;padding: 10px;background: #0068ce;color: white;">Created by: Md. Mehedi Hasan </p>
+	
 </form>
 </body>
 </html>
