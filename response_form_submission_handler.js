@@ -69,6 +69,7 @@
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
+          window.location.href = 'https://collegewise-result.github.io/thank_you.html'; //redirect users to thank you page
           form.reset();
           var formElements = form.querySelector(".form-elements")
           if (formElements) {
@@ -78,8 +79,6 @@
           var formInputs=form.querySelector(".contents");
           if (thankYouMessage) {
             thankYouMessage.style.display = "block";
-            
-            formInputs.style.display = "none"; //hide form
           }
         }
     };
