@@ -94,8 +94,20 @@ button:hover {
 </head>
 	<script>
 	function DataIsBeingSubmittedMessage() {
-  document.getElementsByClassName('content')[0].innerHTML="<h4> Your messege is being sent. Please wait.</h4>"
+	var text = ["Sending", "Sending.", "Sending..","Sending..."];
+	var counter = 0;
+	var elem = document.getElementsByClassName('submit_button')[0];
+	var inst = setInterval(change, 1000);
+
+		function change() {
+  		elem.innerHTML = text[counter];
+  		counter++;
+  			if (counter >= text.length) {
+   			 counter = 0;
+    			// clearInterval(inst); // uncomment this if you want to stop refreshing after one cycle
+  			}
 		}
+	}
 	</script>
 <body>
   <h1> Collegewise Result for National University of Bangladesh </h1> 
@@ -114,7 +126,7 @@ button:hover {
       required placeholder="Your message..."></textarea>
 
 
-<button type="submit" onclick="DataIsBeingSubmittedMessage()" ID=Button1>Send</button>
+<button class="submit_button" type="submit" onclick="DataIsBeingSubmittedMessage()" ID=Button1>Send</button>
 
 </div>
   
