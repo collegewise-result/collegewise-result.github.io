@@ -92,6 +92,11 @@ button:hover {
 
 
 </head>
+	<script>
+	function DataIsBeingSubmittedMessage() {
+  document.getElementsByClassName('content')[0].innerHTML="<h4> Your messege is being sent. Please wait.</h4>"
+		}
+	</script>
 <body>
   <h1> Collegewise Result for National University of Bangladesh </h1> 
 <div class="content">
@@ -109,7 +114,7 @@ button:hover {
       required placeholder="Your message..."></textarea>
 
 
-<button type="submit" ID=Button1>Send</button>
+<button type="submit" onclick="DataIsBeingSubmittedMessage()" ID=Button1>Send</button>
 
 </div>
   
