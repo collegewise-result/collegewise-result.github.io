@@ -75,8 +75,11 @@
             formElements.style.display = "none"; // hide form
           }
           var thankYouMessage = form.querySelector(".thankyou_message");
+          var formInputs=form.querySelector(".contents");
           if (thankYouMessage) {
             thankYouMessage.style.display = "block";
+            
+            formInputs.style.display = "none"; //hide form
           }
         }
     };
