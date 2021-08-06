@@ -97,8 +97,7 @@ button:hover {
 	var text = ["Sending.", "Sending..","Sending..."];
 	var counter = 0;
 	var elem = document.getElementsByClassName('submit_button')[0];
-		elem.disabled=true;
-	var inst = setInterval(change, 400);
+	var inst = setInterval(change, 700);
 
 		function change() {
   		elem.innerHTML = text[counter];
