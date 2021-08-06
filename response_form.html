@@ -94,10 +94,11 @@ button:hover {
 </head>
 	<script>
 	function DataIsBeingSubmittedMessage() {
-	var text = ["Sending", "Sending.", "Sending..","Sending..."];
+	var text = ["Sending.", "Sending..","Sending..."];
 	var counter = 0;
 	var elem = document.getElementsByClassName('submit_button')[0];
-	var inst = setInterval(change, 1000);
+		elem.disabled=true;
+	var inst = setInterval(change, 400);
 
 		function change() {
   		elem.innerHTML = text[counter];
