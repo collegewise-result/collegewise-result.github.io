@@ -86,6 +86,16 @@ button:hover {
   background-image: -webkit-linear-gradient(transparent,rgba(0,0,0,.05) 40%,rgba(0,0,0,.1));
   background-image: linear-gradient(transparent,rgba(0,0,0,.05) 40%,rgba(0,0,0,.1));
 }
+
+.ohnohoney{
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 0;
+        width: 0;
+        z-index: -1;
+}
 </style>
 
 <form class="gform" action="https://script.google.com/macros/s/AKfycbwOvFxHKjlouzNpev63gSkd2LSqt_SKsC_S8i8TgnZawM8qhNdw/exec" method="POST">
@@ -114,15 +124,23 @@ button:hover {
 <div class="content">
 <p class="instruction" style="border: 0px;margin-top:10px; margin-bottom:10px;font-size:2.5em;color:#0099ff;">Feedback Form</p>
 
-      <label for="name" class="form-label">Name: </label>
-      <input type="text" id="name" name="name" placeholder="Please write your name" />
+	// honeypot to prevent bots
+	<!-- H o n e y p o t -->
+    <label class="ohnohoney" for="name"></label>
+    <input class="ohnohoney" autocomplete="off" type="text" id="name" name="name" placeholder="Your name here">
+    <label class="ohnohoney" for="email"></label>
+    <input class="ohnohoney" autocomplete="off" type="email" id="email" name="email" placeholder="Your e-mail here">
+	
+	<!-- R E A L-->
+      <label for="anaaamaea" class="form-label">Name: </label>
+      <input type="text" id="anaaamaea" name="anaaamaea" placeholder="Please write your name" />
 
-     <label class="form-label" for="email">Your Email Address:</label>
-      <input id="email" name="email" type="email" value=""
+     <label class="form-label" for="aeamaaaiala">Your Email Address:</label>
+      <input id="aeamaaaiala" name="aeamaaaiala" type="email" value=""
       required placeholder="your.name@email.com"/>
            
-      <label class="form-label" for="message">Message:</label>
-      <textarea id="message" name="message" rows="8"
+      <label class="form-label" for="amaeasasaaagaea">Message:</label>
+      <textarea id="amaeasasaaagaea" name="amaeasasaaagaea" rows="8"
       required placeholder="Your message..."></textarea>
 
 
