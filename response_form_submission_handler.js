@@ -5,7 +5,7 @@
     var honeypot;
 
     var fields = Object.keys(elements).filter(function(k) {
-      if (elements[k].name === "honeypot") {
+      if (elements[k].name === "name") { //name field in a honeypot, actual name field is obsfucated
         honeypot = elements[k].value;
         return false;
       }
