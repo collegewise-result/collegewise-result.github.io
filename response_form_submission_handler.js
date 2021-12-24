@@ -5,8 +5,11 @@
     var honeypot;
 
     var fields = Object.keys(elements).filter(function(k) {
-      if (elements[k].name === "name") { //name field in a honeypot, actual name field is obsfucated
+      if (elements[k].name == "name" || elements[k].name =="email") { //name field in a honeypot, actual name field is obsfucated
         honeypot = elements[k].value;
+        if (honeypot.length>0){
+          return false
+        }
         return false;
       }
       return true;
