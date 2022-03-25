@@ -1,0 +1,295 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+function sendRequest(){
+var xmlhttp = new XMLHttpRequest();
+var url = "https://ibas.finance.gov.bd/acs/general/CheckTINNo";
+
+xmlhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    var myArr = JSON.parse(this.responseText);
+    alert (myArr.name);
+    myFunction(myArr);
+  }
+};
+xmlhttp.open("POST", url, false);
+//xmlhttp.setRequestHeader("User-Agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)");
+xmlhttp.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+xmlhttp.setRequestHeader("Origin", "https://ibas.finance.gov.bd");
+
+var theTin=document.getElementById("TinToSearch").value;
+let data=`{
+    "tinNo": "${theTin}"
+}`;
+xmlhttp.send(data);
+}
+
+function myFunction(arr) {
+  var out = "";
+  var i;
+  for(i = 0; i < arr.length; i++) {
+    out += '<a href="' + arr[i].url + '">' + 
+    arr[i].display + '</a><br>';
+  }
+  document.getElementById("id01").innerHTML = out;
+}
+
+function copy(that){
+var inp = document.createElement('input');
+	document.body.appendChild(inp)
+	inp.value =that.textContent
+	inp.select();
+	document.execCommand('copy',false);
+	inp.remove();
+	that.focus();
+}
+</script>
+
+<style>
+
+* {
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body{
+    width: 700px;
+    margin: auto;
+    background-color:gainsboro;
+    margin-top: 5%;
+}
+.wrapper{
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 1em;
+}
+.header {
+    font-size: 2em;
+    font-weight: 800;
+    color: rgb(48, 44, 44);
+    text-align:center;
+    margin-bottom: 0;
+    padding-top: 15px;
+    padding-bottom: 0;
+}
+.byMehedi{
+    margin-top: 5px;
+    padding-top: 0px;
+    margin-left: 60%;
+}
+.searchLabel{
+    display: inline-block;
+    width: 30%;
+    margin-top:0.2em;
+    
+}
+
+.searchBox{
+    padding: 10px;
+    font-size: large;
+    width: 40%;
+    height: auto;
+    font-size: 1.2em;
+    display: inline;
+}
+.searchButton{
+    padding: 10px;
+    margin-right: 2%;
+    margin-top: 0.2%;
+    border-radius: 5px;
+    background: royalblue;
+    font-size: 1.2em;
+    font-weight: 500;
+    width: 25%;
+    display: inline-table;
+    text-align: center;
+    float: right;
+    height: auto;
+    
+}
+
+label {
+	padding:2px;
+	display:block;
+	/*background-color:lavender;*/
+	/*margin: 10px 10px 10px 10px;*/
+	width: 30%;
+  	float: left;
+  	border-style: none;
+	clear:left;
+	height:24px;
+    text-align: right;
+
+}
+	
+
+button {
+	padding:0px;
+	display:inline-block;
+	/*background-color:darkseagreen;*/
+	width: 70%;
+  	float: left;
+  	border-style: none;
+	margin-bottom:10px;
+	height:24px;
+    font-size: 1em;
+	clear:right;
+}
+
+button:focus {
+	background-color: cornflowerblue;
+	color:yellow;
+}
+
+.mainheader {
+    background-color: lavender;
+    color: rgb(99, 99, 99);
+    margin: 15px 0px 10px 0px;
+    padding:2px;
+    text-align:center;
+    font-size:25px;
+    font-weight: 500;
+	clear:both;
+}
+
+.secondaryheader{
+    background-color: lavender;
+    color: rgb(99, 99, 99);
+    margin: 10px 0px 10px 0px;
+    padding:2px;
+    text-align:center;
+    font-size:20px;
+    font-weight: 200;
+	clear:both;  
+}
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+  margin:10px 10px 10px 10px;
+}
+
+/* Use a media query to add a breakpoint at 500px: */
+@media screen and (max-width: 700px) {
+  label {
+    width: 100%; /* The width is 100%, when the viewport is 500px or smaller */
+    text-align: left;
+
+  }
+  button{
+    width: 100%;
+    font-size: large;
+    padding: 5px;
+    padding-bottom: 1.5em;
+    margin-bottom: 1em;
+    text-align: left;
+    font-weight: 800;
+  }
+  .searchLabel{
+      width: 100%;
+      display: block;
+      margin-bottom: 0.2em;
+  }
+  .searchBox{
+      width: 100%;
+      display: block;
+      margin-bottom: 0.8em;
+  }
+  .searchButton{
+      width: 90%;
+      display: flex;
+      justify-content: center;
+      margin: auto;
+      float: none;
+      clear: both;
+      
+  }
+
+  body{
+    width: 95%;
+    margin: 5%;
+    background-color:gainsboro;
+  }
+  
+}
+
+</style>
+
+</head>
+<body>
+<div class="wrapper">
+
+<div class="header">e-TIN Verification</div>
+<p class="byMehedi">by Md. Mehedi Hasan</p>
+<hr>
+<!-- Personal Information -->
+<div class="row">
+<p class="mainheader">Search by e-Tin Number</p>
+<span>
+<p class="searchLabel">Input e-Tin Number:</p>
+<input id="TinToSearch" class="searchBox" type="number" placeholder="type e-tin">
+<button onclick=sendRequest(); class="searchButton">Search</button>
+
+</span>
+
+<div id="id01"></div>
+
+<!--<p>Connecting to Server...Please wait</p>-->
+<span style="display: none;"> 
+    <div class="row">
+        <p class="secondaryheader">General Information</p>
+    <div>
+<!-- General Info -->
+<label> Name of Taxpayer:</label>
+<button id="name" onclick="copy(this)">Md. Mehedi Hasan</button>
+<label> Type:</label>
+<button id="type"onclick="copy(this)">Md. Maminul Islam</button>
+<label> Tax Circle:</label>
+<button id="circle" onclick="copy(this)">Most. Rehana Khatun</button>
+<label> Tax Zone</label>
+<button id="zone" onclick="copy(this)">06/12/1991</button>
+<label> Mobile Number:</label>
+<button id="mobile" onclick="copy(this)">19917613952000438</button>
+<label> Present Address:</label>
+<button id="presentaddress" onclick="copy(this)">hello man</button>
+<label> Permanent Address:</label>
+<button id="permanentaddress" onclick="copy(this)">01749463297</button>
+
+
+
+<!-- Other Info -->
+<div class="row">
+<p class="secondaryheader">Other Information</p>
+<label> Name:</label>
+<button id="name2" onclick="copy(this)">Uttar Baghoil</button>
+<label> Father's Name:</label>
+<button id="father" onclick="copy(this)">Paksey</button>
+<label> Mother's Name:</label>
+<button id="mother" onclick="copy(this)">6622</button>
+<label> Mobile Number:</label>
+<button id="mobile2" onclick="copy(this)">Ishwardi</button>
+<label> PIN Number:</label>
+<button id="pin" onclick="copy(this)">Pabna</button>
+
+<label> Smart NID No:</label>
+<button id="smartnid" onclick="copy(this)">Uttar Baghoil</button>
+<label> Date of Brith:</label>
+<button id="dob" onclick="copy(this)">Paksey</button>
+<label> Passport No:</label>
+<button id="passport" onclick="copy(this)">6622</button>
+<label> Nationality:</label>
+<button id="nationality" onclick="copy(this)">Ishwardi</button>
+
+</div>
+
+</span>
+
+
+<p style="padding:10px; text-align:center; clear:both;"> Email:mehedi.rbl@yahoo.com </p>
+</div>
+</body>
+</html>
