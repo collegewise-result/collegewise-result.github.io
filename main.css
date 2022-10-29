@@ -138,3 +138,24 @@ margin: auto;
 background: white;
 padding: 10px 10px 10px 10px;
 }
+
+.faq {
+    text-align: center;
+    font-weight: bold ;
+    margin: auto;
+    max-width: 500px;
+    padding: 10px;
+    background: #22f093;
+    color: white;
+}
+
+.createdby {
+    border-radius: 0px 0px 5px 5px;
+    text-align: center;
+    margin: auto;
+    max-width: 500px;
+    padding: 10px;
+    background: #ffffff;
+    color: rgb(95, 89, 89);
+}
+    
