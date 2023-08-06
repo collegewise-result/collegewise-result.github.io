@@ -1,0 +1,34 @@
+
+.high-score {
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.high-score:hover {
+  transform: scale(1.025);
+}
+
+#highScoresListTable {
+  border-collapse:separate;
+  width: 100%;
+  font-size: medium;
+  margin-bottom: 5rem;  
+}
+
+#highScoresListTable tr:hover {background-color: #a7c9ea;}
+
+#highScoresListTable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: #56a5eb;
+  text-align: center;
+  color: white;
+}
+#highScoresListTable td {
+    padding: 10px;
+  font-size: medium;
+  padding-bottom: 1rem;
+  background-color: #9ecdf6;
+  color: black;
+  text-align: left;
+}
